@@ -22,9 +22,6 @@ RUN apt-get install -y \
     git \
     wine
 
-RUN rm /var/lib/apt/lists/*gz
-RUN apt-get -o Acquire::GzipIndexes=false update
-
 RUN wget https://nodejs.org/download/release/v4.4.4/node-v4.4.4-linux-x64.tar.gz
 RUN tar -C /usr/local --strip-components 1 -xzf node-v4.4.4-linux-x64.tar.gz
 RUN npm -g install npm
